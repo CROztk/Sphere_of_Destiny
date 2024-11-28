@@ -1208,6 +1208,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 508212208}
+  icon: {fileID: 912278223}
+  muteIcon: {fileID: 21300000, guid: ff94757ed0ed927459865de759e9c35d, type: 3}
+  unmuteIcon: {fileID: 21300000, guid: 114a1d174e97bfe45af987a62b52aba1, type: 3}
 --- !u!1 &1036243048
 GameObject:
   m_ObjectHideFlags: 0
