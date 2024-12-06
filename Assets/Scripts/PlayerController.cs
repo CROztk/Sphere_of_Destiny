@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator)), RequireComponent(typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float runSpeed = 8f;
+    public float jumpImpulse = 10f;
     Vector2 moveInput;
+    TouchingDirections touchingDirections;
 
     public float speed => IsRunning ? runSpeed : walkSpeed;
 
@@ -41,23 +43,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchingDirections>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveInput.x * speed, rb.velocity.y);
+        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -91,6 +84,16 @@ public class PlayerController : MonoBehaviour
         else if(context.canceled)
         {
             IsRunning = false;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // TODO Check if character is alive
+        if(context.started && touchingDirections.IsGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            animator.SetTrigger(AnimationStrings.jump);
         }
     }
 }
