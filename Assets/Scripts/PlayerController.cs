@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         if(context.started)
         {
             animator.SetTrigger(AnimationStrings.Attack);
+            moveInput = Vector2.zero;
         }
     }
 }
