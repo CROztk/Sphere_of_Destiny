@@ -8,11 +8,29 @@ public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float runSpeed = 8f;
+    public float airWalkSpeed = 3f;
     public float jumpImpulse = 10f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
 
-    public float speed => IsRunning ? runSpeed : walkSpeed;
+    public float Speed {
+        get
+        {
+            if((IsMoving && !touchingDirections.IsOnWall) && CanMove)
+            {
+                if(touchingDirections.IsGrounded)
+                {
+                    return IsRunning ? runSpeed : walkSpeed;
+                }else
+                {
+                    return airWalkSpeed;
+                }
+            }else
+            {
+                return 0;
+            }
+        }
+    }
 
     [SerializeField]
     private bool _isMoving = false;
@@ -36,6 +54,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(AnimationStrings.isRunning, value);
     } }
 
+    public bool CanMove { get
+    {
+        return animator.GetBool(AnimationStrings.canMove);
+    } }
     Rigidbody2D rb;
     Animator animator;
 
@@ -49,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * speed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
@@ -90,7 +112,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         // TODO Check if character is alive
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             animator.SetTrigger(AnimationStrings.jump);
@@ -102,7 +124,6 @@ public class PlayerController : MonoBehaviour
         if(context.started)
         {
             animator.SetTrigger(AnimationStrings.Attack);
-            moveInput = Vector2.zero;
         }
     }
 }
