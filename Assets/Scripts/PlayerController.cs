@@ -96,4 +96,12 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(AnimationStrings.jump);
         }
     }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            animator.SetTrigger(AnimationStrings.Attack);
+        }
+    }
 }
