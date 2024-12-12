@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6472858465621057057}
   - component: {fileID: 2575440867542834356}
   - component: {fileID: 1335253282051409016}
+  - component: {fileID: 5642572686090037300}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -131,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 10
+  airWalkSpeed: 3
   jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
@@ -367,4 +369,20 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
   _isGrounded: 1
+  _isOnwall: 1
+  _isOnCeiling: 0
+--- !u!114 &5642572686090037300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408441126285781590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcd5b17ee17a9343bf0fe23d1f45af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

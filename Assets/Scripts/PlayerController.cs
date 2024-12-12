@@ -14,21 +14,28 @@ public class PlayerController : MonoBehaviour
     TouchingDirections touchingDirections;
 
     public float Speed {
+        
         get
         {
-            if((IsMoving && !touchingDirections.IsOnWall) && CanMove)
+            if (CanMove)
             {
-                if(touchingDirections.IsGrounded)
+                if ((IsMoving && !touchingDirections.IsOnWall&&CanMove))
                 {
-                    return IsRunning ? runSpeed : walkSpeed;
-                }else
-                {
-                    return airWalkSpeed;
+                    if (touchingDirections.IsGrounded)
+                    {
+                        return IsRunning ? runSpeed : walkSpeed;
+                    }
+                    else
+                    {
+                        return airWalkSpeed;
+                    }
                 }
-            }else
-            {
-                return 0;
+                else
+                {
+                    return 0;
+                }
             }
+            else{ return 0;}
         }
     }
 
@@ -60,7 +67,7 @@ public class PlayerController : MonoBehaviour
     } }
     Rigidbody2D rb;
     Animator animator;
-
+ 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
