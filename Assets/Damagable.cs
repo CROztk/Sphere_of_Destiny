@@ -77,6 +77,7 @@ public class Damageable : MonoBehaviour
 
     // The velocity should not be changed while this is true but needs to be respected by other physics components like
     // the player controller
+    // IsHit property in the video
     public bool LockVelocity
     {
         get
@@ -88,6 +89,7 @@ public class Damageable : MonoBehaviour
             animator.SetBool(AnimationStrings.lockVelocity, value);
         }
     }
+    
 
     private void Awake()
     {

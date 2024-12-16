@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator)), RequireComponent(typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator)), RequireComponent(typeof(TouchingDirections)), RequireComponent(typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
+    Damageable damageable;
 
     public float Speed {
         
@@ -65,6 +66,14 @@ public class PlayerController : MonoBehaviour
     {
         return animator.GetBool(AnimationStrings.canMove);
     } }
+
+    public bool IsAlive { get
+    {
+        return animator.GetBool(AnimationStrings.isAlive);
+    } }
+
+    
+
     Rigidbody2D rb;
     Animator animator;
  
@@ -73,12 +82,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
 
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
+        if(!damageable.LockVelocity)
+        {
+            rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
+        }
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
@@ -86,9 +99,14 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
         
-        IsMoving = moveInput != Vector2.zero;
-
-        SetFacingDirection();
+        if(IsAlive)
+        {
+            IsMoving = moveInput != Vector2.zero;
+            SetFacingDirection();
+        }else
+        {
+            IsMoving = false;
+        }
         
     }
 
@@ -122,7 +140,7 @@ public class PlayerController : MonoBehaviour
         if(context.started && touchingDirections.IsGrounded && CanMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-            animator.SetTrigger(AnimationStrings.jump);
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
         }
     }
 
@@ -130,7 +148,12 @@ public class PlayerController : MonoBehaviour
     {
         if(context.started)
         {
-            animator.SetTrigger(AnimationStrings.Attack);
+            animator.SetTrigger(AnimationStrings.attackTrigger);
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
