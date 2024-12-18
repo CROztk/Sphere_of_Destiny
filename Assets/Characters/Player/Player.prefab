@@ -508,7 +508,7 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
+  _maxHealth: 200
   _health: 100
   _isAlive: 1
   isInvincible: 0
