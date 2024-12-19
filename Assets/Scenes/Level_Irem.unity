@@ -30672,30 +30672,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2044720696}
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2044720696}
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnJump
-      objectReference: {fileID: 0}
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnJump
-      objectReference: {fileID: 0}
-    - target: {fileID: 3079940084633793374, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3695108511789498469, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -30734,18 +30710,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3695108511789498469, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4272875127066441222, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398419812288332591, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6102821177532101794, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8408441126285781590, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
@@ -30919,17 +30883,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09da01e56aaeda428d743aabe285557, type: 3}
---- !u!114 &2044720696 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2448213450250225425, guid: 369cf3fac7ba0234f9b43e0855902267, type: 3}
-  m_PrefabInstance: {fileID: 1795866832}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5509cf7e582cc4a209ebaf94052f705a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &2049172424 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1929542198421362780, guid: 12054883a46044fc39a3a5dae105708c, type: 3}

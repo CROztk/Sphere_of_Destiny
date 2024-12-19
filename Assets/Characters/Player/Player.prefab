@@ -40,7 +40,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104770106394804301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -242,7 +242,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491835088154820268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -440,7 +440,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 3
-  jumpImpulse: 10
+  jumpImpulse: 9
   _isMoving: 0
   _isRunning: 0
 --- !u!114 &3079940084633793374
