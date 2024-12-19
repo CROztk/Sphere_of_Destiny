@@ -6,9 +6,8 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
-    public UnityEvent damageableDeath;
     public UnityEvent<int, int> healthChanged;
-
+    public UnityEvent damageableDeath;
     Animator animator;
 
     [SerializeField]
@@ -76,8 +75,7 @@ public class Damageable : MonoBehaviour
     }
 
     // The velocity should not be changed while this is true but needs to be respected by other physics components like
-    // the player controller
-    // IsHit property in the video
+    // the player controller// IsHit property in the video
     public bool LockVelocity
     {
         get
@@ -90,7 +88,6 @@ public class Damageable : MonoBehaviour
         }
     }
     
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
