@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6030012563221856862}
   m_Layer: 8
   m_Name: FlyingEye
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,6 +318,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waypointReachedDistance: 0.1
+  followRange: 40
+  isClever: 0
   _hasTarget: 0
 --- !u!1 &3070839570857402215
 GameObject:

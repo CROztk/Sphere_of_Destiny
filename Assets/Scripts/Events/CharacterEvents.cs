@@ -13,4 +13,7 @@ public class CharacterEvents
 
     // Character healed and amount healed
     public static UnityAction<GameObject, int> characterHealed;
+
+    // Character has a message to display
+    public static UnityAction<GameObject, string> characterMessage;
 }

@@ -84,9 +84,15 @@ public class FlyingEye : MonoBehaviour
     private void ChaseTarget()
     {
         Vector2 directionToTarget = (target.position - transform.position).normalized;
-        rb.velocity = directionToTarget * flightSpeed;
-        UpdateDirection();
         float distance = Vector2.Distance(target.position, transform.position);
+        if(distance < 1f)
+        {
+            rb.velocity = Vector2.zero;
+        }else
+        {
+            rb.velocity = directionToTarget * flightSpeed;
+        }
+        UpdateDirection();
         if (distance > followRange)
         {
             lockedOnTarget = false;
