@@ -10,6 +10,8 @@ public class FlyingEye : MonoBehaviour
     public Collider2D deathCollider;
     public List<Transform> waypoints; 
     public float waypointReachedDistance=0.1f;
+    public float followRange = 40f;
+    public bool isClever = false;
     
     
     Animator animator; 
@@ -17,7 +19,9 @@ public class FlyingEye : MonoBehaviour
     Damageable damageable;
 
     Transform nextWaypoint;
+    private Transform target;
     int waypointNum = 0;
+    private bool lockedOnTarget = false;
     
     public bool _hasTarget = false;
     
@@ -26,6 +30,12 @@ public class FlyingEye : MonoBehaviour
         {
             _hasTarget = value;
             animator.SetBool(AnimationStrings.hasTarget, value);
+            if (value && isClever)
+            {
+                target = biteDetectionZone.detectedColliders[0].transform;
+                lockedOnTarget = true;
+                flightSpeed = 4f;
+            }
         }
     }
     
@@ -58,16 +68,28 @@ public class FlyingEye : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (damageable.IsAlive)
+        if (damageable.IsAlive && CanMove && !lockedOnTarget)
         {
-            if (CanMove)
-            {
-                Flight();
-            }
-            else
-            {
-                rb.velocity = Vector3.zero;
-            }
+            Flight();
+        }else if (lockedOnTarget)
+        {
+            ChaseTarget();
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
+    }
+
+    private void ChaseTarget()
+    {
+        Vector2 directionToTarget = (target.position - transform.position).normalized;
+        rb.velocity = directionToTarget * flightSpeed;
+        UpdateDirection();
+        float distance = Vector2.Distance(target.position, transform.position);
+        if (distance > followRange)
+        {
+            lockedOnTarget = false;
         }
     }
 
