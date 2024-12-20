@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         
         if(IsAlive)
         {
-            IsMoving = moveInput != Vector2.zero;
+            IsMoving = moveInput.x != 0;
             SetFacingDirection();
         }else
         {
