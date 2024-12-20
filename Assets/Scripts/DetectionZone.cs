@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class DetectionZone : MonoBehaviour
 {
-    public UnityEvent NoCollicersRemain;
+    public UnityEvent noCollidersRemain;
     
     public List<Collider2D> detectedColliders = new List<Collider2D>();
     private Collider2D col;
@@ -26,7 +26,7 @@ public class DetectionZone : MonoBehaviour
 
         if (detectedColliders.Count <= 0)
         {
-            NoCollicersRemain.Invoke();
+            noCollidersRemain.Invoke();
         }
     }
 }

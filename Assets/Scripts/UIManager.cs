@@ -49,4 +49,22 @@ public class UIManager : MonoBehaviour
 
         tmpText.text = healthRestored.ToString();
     }
+
+    public void OnExit(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            #if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+            Debug.Log("Exit button pressed");
+            #endif
+
+            #if (UNITY_EDITOR)
+                UnityEditor.EditorApplication.isPlaying = false;
+            #elif (UNITY_STANDALONE)
+                Application.Quit();
+            #elif (UNITY_WEBGL)
+                SceneManager.LoadScene("UI");
+            #endif
+        }
+    }
 }

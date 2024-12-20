@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 858632222418222028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.19, y: -0.05, z: 0}
+  m_LocalPosition: {x: 1.02, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdf293b1406f054a90efc894857a98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollicersRemain:
+  noCollidersRemain:
     m_PersistentCalls:
       m_Calls: []
   detectedColliders: []
@@ -81,8 +81,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.055749178, y: -0.21016169}
-  m_Size: {x: 1.3796525, y: 1.4305868}
+  m_Offset: {x: -0.12840295, y: -0.21016169}
+  m_Size: {x: 1.234345, y: 1.4305868}
   m_Direction: 0
 --- !u!1 &2519118640889164984
 GameObject:
@@ -271,8 +271,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maxHealth: 15
-  _health: 15
+  _maxHealth: 50
+  _health: 50
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 2
-  BiteDetectionZone: {fileID: 5923035717147883884}
+  biteDetectionZone: {fileID: 5923035717147883884}
   deathCollider: {fileID: 5014816777396989028}
   waypoints:
   - {fileID: 0}

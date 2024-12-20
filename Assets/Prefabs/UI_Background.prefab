@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7018151313253198979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708507184600892923}
+  - component: {fileID: 1767208522190066862}
+  - component: {fileID: 1163771673602645705}
+  - component: {fileID: 9152720431403929111}
+  m_Layer: 5
+  m_Name: UI_Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &708507184600892923
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018151313253198979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1767208522190066862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018151313253198979}
+  m_CullTransparentMesh: 1
+--- !u!114 &1163771673602645705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018151313253198979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9490196, g: 0.8862745, b: 0.7176471, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -355986468, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9152720431403929111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018151313253198979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32852e63e05f4485bf92a6d8f10200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSprite:
+  - {fileID: -355986468, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1824573930, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 615959177, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -747148729, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1187825903, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -588312548, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -492035802, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -1228765525, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 596592958, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1069889797, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -1800375791, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -1852195151, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -1455888588, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -22057490, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 735027132, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1498346886, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1743689277, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: 1121637446, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  - {fileID: -994935192, guid: fd22d69f751c2416ca9a32117088fda9, type: 3}
+  timeBetweenFrames: 0.7
+  bgImage: {fileID: 1163771673602645705}

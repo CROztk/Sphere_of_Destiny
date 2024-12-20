@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
 
         if (damageable != null)
         {
-            Vector2 deliveredKnockback = new Vector2(knockback.x * Mathf.Sign(transform.localScale.x), knockback.y);
+            Vector2 deliveredKnockback = new Vector2(knockback.x * Mathf.Sign(transform.parent.localScale.x), knockback.y);
             damageable.Hit(attackDamage, deliveredKnockback);
         }
     }

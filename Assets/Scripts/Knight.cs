@@ -84,7 +84,7 @@ public class Knight : MonoBehaviour
     {
         get
         {
-            return animator.GetBool(AnimationStrings.canMove);
+            return animator.GetBool(AnimationStrings.canMove) && AttackCooldown <= 0.001f;
         }
     }
 

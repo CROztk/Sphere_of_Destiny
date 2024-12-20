@@ -7,6 +7,12 @@ public class HealthPickup : MonoBehaviour
 {
     public int healthRestore = 20;
     public Vector3 spinRotationSpeed = new Vector3(0, 180, 0);
+    AudioSource pickupSound;
+
+    private void Awake()
+    {
+        pickupSound = GetComponent<AudioSource>();
+    }
     
     
     // Start is called before the first frame update
@@ -19,11 +25,14 @@ public class HealthPickup : MonoBehaviour
     {
         Damageable damageable = collision.GetComponent<Damageable>();
 
-        if (damageable)
+        if (damageable && damageable.Health < damageable.MaxHealth)
         {
             bool wasHealed = damageable.Heal(healthRestore);
-            if(wasHealed)
+            if(wasHealed){
+                // Since game object will be destroyed, we need to play the sound at the position of the object
+                AudioSource.PlayClipAtPoint(pickupSound.clip, transform.position, pickupSound.volume);
                 Destroy(gameObject);
+            }
         }
     }
 

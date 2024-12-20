@@ -6,7 +6,7 @@ using UnityEngine;
 public class FlyingEye : MonoBehaviour
 {
     public float flightSpeed = 2f;
-    public DetectionZone BiteDetectionZone;
+    public DetectionZone biteDetectionZone;
     public Collider2D deathCollider;
     public List<Transform> waypoints; 
     public float waypointReachedDistance=0.1f;
@@ -49,16 +49,11 @@ public class FlyingEye : MonoBehaviour
         nextWaypoint = waypoints[waypointNum];
     }
 
-    private void OnEnable()
-    {
-        damageable.damageableDeath.AddListener(() => OnDeath());
-    }
-
 
     // Update is called once per frame
     void Update()
     {
-        HasTarget = BiteDetectionZone.detectedColliders.Count > 0;
+        HasTarget = biteDetectionZone.detectedColliders.Count > 0;
     }
 
     private void FixedUpdate()

@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdf293b1406f054a90efc894857a98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollicersRemain:
+  noCollidersRemain:
     m_PersistentCalls:
       m_Calls: []
   detectedColliders: []
@@ -449,10 +449,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  damageableDeath:
+  healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  healthChanged:
+  damageableDeath:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 100
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdf293b1406f054a90efc894857a98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollicersRemain:
+  noCollidersRemain:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4112274811774361555}

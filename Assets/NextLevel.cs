@@ -28,7 +28,6 @@ public class NextLevel : MonoBehaviour
         {
             // Load the next level
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
-            Debug.Log("Next Level");
         }
     }
 
