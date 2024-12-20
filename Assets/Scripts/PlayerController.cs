@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 8f;
     public float airWalkSpeed = 3f;
     public float jumpImpulse = 10f;
+    public float reviveTime = 3f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
     Damageable damageable;
@@ -93,6 +94,17 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
         }
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        if(!IsAlive)
+        {
+            reviveTime -= Time.fixedDeltaTime;
+            if(reviveTime <= 0.1f)
+            {
+                reviveTime = 3f;
+                // Reload the scene
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
