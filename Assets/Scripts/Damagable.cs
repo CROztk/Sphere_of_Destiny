@@ -94,6 +94,10 @@ public class Damageable : MonoBehaviour
 
     private void Update()
     {
+        if(transform.position.y < -100)
+        {
+            Hit(1000, Vector2.zero);
+        }
         if(isInvincible)
         {
             if(timeSinceHit > invincibilityTime)
