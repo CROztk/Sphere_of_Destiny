@@ -18,6 +18,7 @@ This project is a 2D platformer game developed using the [Unity](https://unity.c
 1. Install Unity on your computer. [Download Unity](https://unity.com/download)
 2. Clone this repository to your local machine:
    ```bash
+   https://github.com/CROztk/Sphere_of_Destiny.git
 
 ## Contributors
 
